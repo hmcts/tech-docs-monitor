@@ -16,5 +16,5 @@ jobs:
 
       - run: bundle exec rake notify:expired
         env:
-          REALLY_POST_TO_SLACK: ${{ (github.event_name == 'schedule') && 1 || 0 }}
+          REALLY_POST_TO_SLACK: 1
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
