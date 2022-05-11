@@ -6,6 +6,7 @@ on:
 jobs:
   daniel_the_manual_spaniel:
     runs-on: ubuntu-latest
+    environment: prod
 
     steps:
       - uses: actions/checkout@v2
@@ -13,9 +14,6 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - run: |
-          echo '${{ secrets.SLACK_WEBHOOK_URL }}' | cut -d '.' -f 1
-
       - run: bundle exec rake notify:expired
         env:
           REALLY_POST_TO_SLACK: 1
