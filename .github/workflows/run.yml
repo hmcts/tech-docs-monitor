@@ -13,6 +13,8 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - run: |
+          echo '${{ secrets.SLACK_WEBHOOK_URL }}' | cut -d '.' -f 1
 
       - run: bundle exec rake notify:expired
         env:
