@@ -1,3 +1,4 @@
+name: daniel_the_manual_spaniel
 on:
   schedule:
     - cron: '5 12 * * 1-5'  # 12:05 UTC, Monday to Friday
